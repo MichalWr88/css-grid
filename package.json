@@ -6,7 +6,7 @@
   "scripts": {
     "start": "run-script-os",
     "start:win32":
-      "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --directory --port 7777 --browser \"C:\\Program Files\\Firefox Developer Edition\\firefox.exe\"",
+      "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --directory --port 7777 --browser \"C:\\Users\\michal\\AppData\\Local\\Google\\Chrome SxS\\Application\\chrome.exe\"",
     "//":
       "Hello! If you are having trouble running this command. Try changing Firefox Developer Edition to FirefoxDeveloperEdition",
     "start:darwin:linux":

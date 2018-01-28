@@ -38,10 +38,12 @@ body {
     linear-gradient(110deg, #f93d66, #6d47d9);
   background-size: 340px, auto;
   min-height: calc(100vh - 100px);
-  margin: 50px;
+  margin: 0px;
+  padding:20px;
   /* background: white; */
   background-position: fixed;
   letter-spacing: -1px;
+  width:100%;
 }
 
 h1,
@@ -52,7 +54,92 @@ h5,
 h6 {
   margin: 0 0 5px 0;
 }
+.container{
+  /*width:100%;*/
+  display: grid;
+  border:5px solid var(--black);
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(5, 100px);
+  grid-gap:20px;
+/*  justify-items:center;*/ /*center end*/
+  /*align-items:center;*/
+  /*justify-content: center;*/
+   /* polozenie dzieci gdy rodzic jest wiekszy niz wszystkie columny*/
+  /*align-content*/
+  /*place-items: center/ center ;*/ /*jezeli wspierany i autoprefixer*/
+/*  grid-auto-flow: dense;*/ /*powoduje wypelnienie pustych przesrzeni*/
+  /*grid-template-columns: 100px auto 100px auto;*/
+  /*grid-template-columns: [site-left] 1fr [content-start] 500px[content-end] 1fr [site-right]; /* nazwy []*/*/
+  /*grid-template-columns: repeat(5, 1fr 2fr);*/
+  /*grid-template-columns: repeat(auto-fill, 100px);*/
+  /*grid-template-columns: repeat(auto-fill, minmax(150px,1fr));*/
+  /*grid-template-columns: repeat(auto-fit, minmax(150px,1fr));*/
+  /*auto-fill bardziej jak flexbox*/
+  /*grid-template-columns: auto 1fr;*/
+  /*grid-template-rows: repeat(10, 50px);*/
+   /*grid-template-rows: auto 1fr 1fr 1fr;*/
+   /*grid-template-rows: [content-top] repeat(10, auto) [content-bottom];*/
+  /*grid-auto-rows:200px 500px;*/
+  /*grid-auto-columns:100px;*/
+  /*grid-auto-flow:row;*/
+/*  grid-template-areas: 
+  "sidebar1 content sidebar2"
+  "sidebar1 content sidebar2"
+  "footer footer footer"*/
+  /*"footer footer ." krowpka wolna przestrzen*/
+}
+
+/*.item:nth-child(6n){
+  background-color: red;
+grid-column: span 6;
+}
+*/
+.content{
+  grid-column: 1/ -1;
+}
+.logo{
+  grid-column: span 2;
+}
+.nav{
+  grid-column: span 8;
+}
+.itm{
+  background-color: white;
+}
+.itm3{
+  width:50px;
+  height:50px;
+  justify-self:end;
+  align-self:end;
+}
+
+/*@media (max-width: 700px){
+  .container{
+    grid-template-rows: 150px auto 100px;
+      grid-template-areas: 
+  "sidebar1 sidebar1 sidebar1"
+  "content content sidebar2"
+  "footer footer footer"
+  }*/
+
+
 /* Each item in our grid will contain numbers */
+/*.item3{
+  background-color: red;
+  grid-column: content-start;
+  grid-row: content-top/content-bottom;
+}*/
+/*.item5{
+  grid-area: footer;
+}.item4{
+  grid-area: sidebar1;
+}
+.item2{
+  grid-area: content;
+}
+.item3{
+  grid-area: sidebar2;
+}*/
 .item {
   /* We center the contents of these items. You can also do this with flexbox too! */
   display: grid;
@@ -66,4 +153,87 @@ h6 {
 
 .item p {
   margin: 0 0 5px 0;
+}
+/*.item4{
+  grid-column-end:-1;
+}*/
+/* .item9{
+  background-color:red;
+  grid-column: span 2; 
+  grid-row: span 2;
+  rozszerzenie do 2 komorek
+}
+.item1{
+  background-color:white;
+  grid-column: 3/5;
+}
+.item2{
+  grid-column:5/-1;
+}
+.item5{
+  background-color:black;
+  color: var(--yellow);
+  grid-column:span 2;
+  grid-row: span 2;
+}
+.item8{
+  grid-row: span 2;
+}
+.item9{
+  background-color:red;
+grid-column-start: 2;
+  grid-column-end: 5;
+  grid-column: 2/ 5 ;
+  grid-column: 2/ span 5 ;  span 5 komorek do przodu
+  grid-column: 1/ -1 ; width 100%
+}
+.item15{
+  grid-column: 1/-1;
+}
+.item18{
+  grid-column: span 4 /9;
+} */
+
+
+/* moje style album */
+.albums{
+width:100%;
+display:grid;
+grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+justify-content: space-around;
+grid-gap: 20px;
+}
+
+.album{
+padding:20px;
+background-color: rgba(255,255,255,0.3);
+box-shadow: 1px 3px 5px 5px rgba(0,0,0,0.1);
+display:grid;
+align-items: center;
+}
+.album__artwork{
+width:100%;
+}
+.album__details{
+padding:10px;
+}
+.album__details h2{
+text-transform: uppercase;
+color: white;
+text-align: center;
+margin:10px 0;
+}
+.album__artist{
+
+}
+.album__desc{
+text-align: justify;
+letter-spacing: 1px;
+}
+
+@media (min-width:425px){
+  .album{
+  grid-template-columns: 150px minmax(150px, 1fr);
+  padding:0 20px;
+  }
 }
